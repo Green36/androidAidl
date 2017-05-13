@@ -4,7 +4,7 @@ package com.sample.k.androidsampleaidl;
 // Declare any non-default types here with import statements
 
 import com.sample.k.androidsampleaidl.ICalculatorCallback;
-//import com.sample.k.androidsampleaidl.CalculatorExpression;
+import com.sample.k.androidsampleaidl.CalculatorExpression;
 
 interface ICalculatorService {
     /**
@@ -41,5 +41,12 @@ interface ICalculatorService {
      * @param num ローテーション数。プラスで右、マイナスで左にローテーション
      */
     void rotate(inout int[] array, int num);
+
+	/**
+	 * 同期の計算。任意の四則演算が行える。
+	 * @param exp 計算式
+	 * @return 計算結果
+	 */
+	int eval(in CalculatorExpression exp);
 
 }
