@@ -98,7 +98,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         mHandler = new Handler();
-        bindService(new Intent(ICalculatorService.class.getName()), mServiceConnection, BIND_AUTO_CREATE);
+        Intent intent = new Intent(ICalculatorService.class.getName());
+        intent.setPackage("com.sample.k.androidsampleaidl");
+        bindService(intent, mServiceConnection, BIND_AUTO_CREATE);
     }
 
     @Override
