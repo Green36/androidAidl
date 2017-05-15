@@ -15,31 +15,34 @@
         app:layout_constraintRight_toRightOf="parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
+            android:layout_width="wrap_content"
+            android:layout_height="68dp"
             android:orientation="horizontal"
+            android:paddingLeft="0dp"
+            android:weightSum="1"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp"
-            android:weightSum="1">
+            tools:layout_editor_absoluteY="8dp">
 
 
             <EditText
                 android:id="@+id/editTextLhs"
-                android:layout_width="130dp"
+                android:layout_width="99dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:ems="10"
                 android:inputType="number" />
 
             <Spinner
                 android:id="@+id/spinnerOp"
-                android:layout_width="100dp"
+                android:layout_width="130dp"
                 android:layout_height="45dp"
-                android:layout_weight="0.91" />
+                android:layout_weight="1.08" />
 
             <EditText
                 android:id="@+id/editTextRhs"
-                android:layout_width="130dp"
+                android:layout_width="104dp"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
                 android:ems="10"
                 android:inputType="number" />
 
@@ -57,6 +60,8 @@
             android:id="@+id/textViewResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:layout_weight="1"
             android:text="TextView"
             tools:layout_editor_absoluteX="0dp"

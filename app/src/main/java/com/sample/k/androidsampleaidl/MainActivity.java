@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +72,17 @@ public class MainActivity extends AppCompatActivity {
         mTextViewResult = (TextView) findViewById(R.id.textViewResult);
         mButtonSend = (Button) findViewById(R.id.buttonSend);
         mButtonSend.setEnabled(false);
+        View.OnClickListener buttonSendListner = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    onSendButtonClick(v);
+                }catch (Exception e){
+                    Log.d(TAG, e.toString());
+                }
+            }
+        };
+        mButtonSend.setOnClickListener(buttonSendListner);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
         adapter.add("+");
@@ -111,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onClick(View view) throws NumberFormatException, RemoteException {
+    public void onSendButtonClick(View view) throws NumberFormatException, RemoteException {
         String lhs = mEditTextLhs.getText().toString();
         String rhs = mEditTextRhs.getText().toString();
         String op = mSpinnerOp.getSelectedItem().toString();
